@@ -1,0 +1,102 @@
+* {
+    font-family:"Alamedasans";
+}
+
+@font-face {
+    font-family: "Almeda";
+    src: url(../fonts/Almeda.woff2);
+}
+@font-face {
+    font-family: "Alamedasans" ;
+    src: url(../fonts/Alamedasans.woff2);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+
+.barranavegacion {
+    border-bottom: 1px solid #ebebeb; 
+    background-color: #fff;
+    height: 63.3px;
+    width: 100%;
+    padding-bottom: 0.7px;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Almeda";
+    font-weight: 500;
+}
+
+.hdrlinks {
+    width: 474.073px;    
+}
+.zoomlogo {
+    width: 110.16px;        
+}
+.logobox {
+    margin-left: 54px;
+    margin-top: 20px;
+
+}
+
+.hdrlinks {
+    width: 474.07px;
+    height: 32px;
+    font-size: 15px;
+    letter-spacing: 0.42px;
+    padding-right: 32px;
+    padding-bottom: 16px;
+    padding-top: 16px;
+}
+.txtnew {
+    margin-right: 0px;
+    font-size: 14px;
+    width: 140.708px;
+    height: 32px;
+    vertical-align: middle;
+}
+.rgstrfree {
+    width: 116px;
+    height: 20px;
+    margin-left: 4px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    color: #0956b5;
+    text-decoration: none;
+
+}
+.sprt {
+    width: 55.125px;
+    height: 20px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin-left: 24px;
+    color: #0956b5;
+    text-decoration: none;
+    font-weight: 550;
+}
+.idiomas {
+    width: 80px;
+    height: 32px;
+    margin-left: 24px;
+    font-size: 14px;
+    padding: 6px 16px;
+    background-color: transparent;
+    border-color: transparent;
+    color:#0956b5;
+}
+
+.signoabajo {
+    width: 14px;
+    height: 14px;
+    color: #0956b5;
+}
+.bodys {
+    display: flex;
+    align-content: center;
+}
+.complogo {
+    width: 360px;
+}

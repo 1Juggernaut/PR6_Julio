@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+    --orange:#f27b2d;
+}
+* {
+    font-family: "Poppins" , sans-serif ; 
+}
+
+:root {
+    --amarillo-exito :#ffe800 ;
+}
+
+.fondobarranav {
+    background-color: var(--amarillo-exito);
+}
+
+.btnmenu {
+    transition:all .9s;
+}
+
+.btnentrega {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.anchobuscador {
+    min-width: 460px;
+}
+
+.micuenta{
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.btnbell {
+    background-color: var(--orange);
+}
+.btnbell {
+    transform: translate();
+}
+.btnmenu:hover {
+   background-color:white;
+   transform:scale(0.7) ;
+}
