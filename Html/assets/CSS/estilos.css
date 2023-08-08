@@ -64,8 +64,6 @@ body{
     padding-left: 5%;
     padding-right: 5%;
     padding-top: 230px;
-
-
 }
 
 .formlogin {
@@ -139,12 +137,13 @@ body{
 .iniciosesion {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    margin-bottom: 20px;
 
 }
 
 .iniciosesion button {
     display: flex;
+    align-items: center;
     flex-direction: column;
 }
 
@@ -270,4 +269,54 @@ body{
 .form-check-input {
     font-weight: bold;
     font-size: small;
+}
+
+.opcionalsesion {
+    text-align: center;
+    color: #747487;
+    margin-bottom: 20px;
+}
+
+.iniciosesion button {
+    width: 48px;
+    height: 48px;
+    padding: 13px;
+    background-color: #fff;
+    border-color: #ebebeb!important;
+    border-style: solid;
+    border-radius: 8px;
+    border-width: 1.2px;
+}
+
+.fotter {
+    padding-bottom: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #747487;
+}
+
+.politicas2 {
+    text-decoration: none;
+    color: #0e72ed;
+}
+
+.politicas2:hover {
+    text-decoration: underline;
+}
+
+.politicas2:visited {
+    color: #0e72ed;
+} 
+
+.condiciones {
+    text-decoration: none;
+    color: #0e72ed;
+}
+
+.condiciones:hover {
+    text-decoration: none;
+}
+
+.condiciones:visited{
+    color: #0e72ed;
 }
