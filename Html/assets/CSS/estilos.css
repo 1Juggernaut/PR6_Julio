@@ -16,7 +16,9 @@ body{
     padding: 0;
 }
 
-
+.formularioss {
+    height: 360px;
+}
 .barranavegacion {
     border-bottom: 1px solid #ebebeb; 
     background-color: #fff;
@@ -74,7 +76,6 @@ body{
 }
 
 .titulologin {
-    padding-top: 24px;
     font-size: 1.5rem;
     font-weight: bolder;
     font-size-adjust: calc(30px);
@@ -130,9 +131,9 @@ body{
 }
 
 
-.boton_ayuda {
-    width: 15px;
-    height: 15px;
+.btnayuda {
+    font-weight: 200;
+    margin-left: 15px;
 }
 
 .iniciosesion {
@@ -164,11 +165,11 @@ body{
 }
 
 .emailusu {
-    width: 100%;
+    width: 380px;
     height: 35px;
     font-weight: normal;
     font-size: 17px;
-    padding: 5px;
+    padding: 5px 0 5px 15px;
     border-radius: 7px;
     border-color: #13121250!important;
     border-style: solid;
@@ -176,11 +177,11 @@ body{
 }
 
 .passusu {
-    width: 100%;
+    width: 380px;
     height: 35px;
     font-weight: normal;
     font-size: 17px;
-    padding: 5px;
+    padding: 5px 0 5px 15px;
     border-radius: 7px;
     border-color: #13121250!important;
     border-style: solid;
@@ -188,10 +189,85 @@ body{
 }
 
 .ingresos1 {
-margin-top: 30px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+.passforgot {
+    font-weight: 200;
+    text-decoration: none;
+}
+
+.passforgot:visited {
+    color: #0956b5;
+}
+
+.passforgot:hover {
+    text-decoration: underline
+}
+
+.lnkayuda {
+    text-decoration: none;
+    font-weight: 200;
+    color: #0956b5;
+}
+
+.lnkayuda:visited {
+    text-decoration: none;
+}
+
+.lnkayuda:hover {
+    text-decoration: underline;
+}
+
+.ingresousuario {
+    background-color: #0e72ed;
+    color: #fff;
+    height: 40px;
+    width: 400px;
+    border-color: #13121250!important;
+    border-style: solid;
+    border-radius: 8px;
+    border-width: 1px;
+    font-size: medium;
+}
+
+.textoterms {
+    margin-top: 20px;
+    color: #747487;
+    word-spacing: 2px;
+}
+
+.politicas {
+    text-decoration: none;
+    font-weight: 200;
+    color: #0956b5;
+}
+.politicas:hover {
+    text-decoration: underline;
+}
+
+.politicas:visited {
+    text-decoration: none;
+}
+
+.termss {
+    text-decoration: none;
+    font-weight: 200;
+    color: #0956b5;
+}
+
+.termss:hover {
+    text-decoration: underline;
+}
+
+.termss:visited {
+    text-decoration: none;
 }
 
 
-.passforgot {
-    margin-top: 10px;
+.form-check-input {
+    font-weight: bold;
+    font-size: small;
 }

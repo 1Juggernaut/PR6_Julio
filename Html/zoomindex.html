@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesión | Zoom</title>
     <link rel="stylesheet" href="assets/CSS/estilos.css">
+    <link rel="shortcut icon" href="assets/img/zoom-icon.ico" type="image/x-icon">
     <style>
       @import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
 </head>
 <header class="barranavegacion">
   <div>
@@ -32,13 +34,13 @@
     <section class="container">
       <div class="formlogin">
         <div class="titulologin">
-          <h1>Ingresar</h1>
+          <h1 class="Ingresartitle">Ingresar</h1>
         </div>
 
 
           <section>
             <form class="formularioss">
-              <div>
+              <div class="contenedorcorreo">
                 <input class="emailusu" type="email" placeholder="Dirección de correo electrónico" required="required">
               </div>
               <br>
@@ -47,17 +49,19 @@
               </div>
         <div class="ingresos1">
           <a href="https://us04web.zoom.us/signin#/forgot-password" class="passforgot">¿Olvidó su contraseña?</a>
-          <a href="#" >Ayuda<img src="assets/img/enlace-externo.png" alt="Enlace externo" class="boton_ayuda"></a>
+            <a href="#" class="lnkayuda">Ayuda<i class="fa-solid fa-arrow-up-right-from-square fa-xs btnayuda"></i></a>
         </div>
-        <button>Ingresar</button>
+        <button class="ingresousuario">Ingresar</button>
 
-        <p>Mediante este inicio de sesión, acepto la <a href="https://explore.zoom.us/es/privacy/">Política<br>de
-          privacidad de Zoom</a> y los <a href="https://explore.zoom.us/es/terms/">Términos de servicio.</a>
-          </p>
+        <p class="textoterms">
+          Mediante este inicio de sesión, acepto la <a href="https://explore.zoom.us/es/privacy/" class="politicas">Política<br>de
+          privacidad de Zoom</a> y los <a href="https://explore.zoom.us/es/terms/" class="termss">Términos de servicio.</a>
+        </p>
         <br>
         <div>
           <div class="form-check">
-            <input class="form-check-input" name="" id="" type="checkbox" value="checkedValue" aria-label="Text for screen reader">No cerrar su cuenta
+            <input class="form-check-input" name="" id="" type="checkbox" value="checkedValue" aria-label="Text for screen reader">
+            No cerrar su cuenta
           </div>
         </div>
       <br><br>
