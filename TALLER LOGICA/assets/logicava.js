@@ -61,9 +61,94 @@ formpunto2.addEventListener('submit', (Pt2even) => {
 //Punto 3 👌
 let formpt3 = document.querySelector("#questpt3")
 
-formpt3.addEventListener('submit', (eventoregalo))
-eventoregalo.preventDefault()
-let edad = document.querySelector("#edadpt3")
-let gender = document.querySelector("#genderpt3")
+formpt3.addEventListener('submit', (eregalo) => {
+    eregalo.preventDefault()
+    let edad = eregalo.target.edadpt3.value
+    let gender = eregalo.target.genderpt3.value
 
+
+    if (edad < 10) {
+        if (gender == "Hombre" || gender == "hombre") {
+            Swal.fire({
+                title: 'Te ganaste un jugo y una pizza de tres carnes!',
+                text: "🧃 🍕🍗🍖",
+                imageUrl: 'assets/img/imgpt3/jugopizzamale.gif',
+                imageWidth: 200,
+                imageHeight: 200,
+                imageAlt: 'Custom image',
+            })
+        } else if (gender == "Mujer" || gender == "mujer") {
+            Swal.fire({
+                title: 'Te ganaste un jugo y una pizza Hawaiana!',
+                text: "🧃 🍕",
+                imageUrl: 'assets/img/imgpt3/jugopizzafemale.gif',
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Custom image',
+            })
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Verifica los datos ingresados 🤨.',
+                text: 'Rectifica tu edad y tu género por favor. 😐',
+            })
+        }
+    }
+
+    if (edad > 18) {
+        if (gender == "Hombre" || gender == "hombre") {
+            Swal.fire({
+                title: 'Te ganaste una pola y una pizza de tres carnes!',
+                text: "🍺 🍕🍗🍖",
+                imageUrl: 'assets/img/imgpt3/pizzapolamale.gif',
+                imageWidth: 200,
+                imageHeight: 200,
+                imageAlt: 'Custom image',
+            })
+
+        } else if (gender == "Mujer" || gender == "mujer") {
+            Swal.fire({
+                title: 'Te ganaste una pola y una pizza Hawaiana!',
+                text: "🍺 🍕",
+                imageUrl: 'assets/img/imgpt3/pizzapolafemale.gif',
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Custom image',
+            })
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Verifica los datos ingresados 🤨.',
+                text: 'Rectifica tu edad y tu género por favor. 😐',
+            })
+        }
+    }
+    if (edad > 9 && edad <= 18) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Que lástima, no recibes premio.',
+            text: '☹️',
+        })
+    }
+})
+
+// Punto 4 :)
+
+const Menucomida = [
+    { nombre: 'Pizza 🍕', precio: '$ 14.000' },
+    { nombre: 'Hamburguesa 🍔', precio: '$19.000' },
+    { nombre: 'Mazorcada 🌽', precio: '$ 9.500' },
+    { nombre: 'Perro caliente 🌭', precio: '$ 12.000' },
+    { nombre: 'Helado 🍨', precio: '$ 8.500'},
+    { nombre : 'Juguito 🧃' , precio: '$ 3.000'}, 
+]
+
+let listacomidas = document.querySelector("#Listacomer")
+
+for (let grillaproductos = 0; grillaproductos < Menucomida.length; grillaproductos++) {
+    listacomidas.innerHTML += `
+    <li>${Menucomida[grillaproductos].nombre}  VALOR : ${Menucomida[grillaproductos].precio}</li>
+    
+    `
+}
 

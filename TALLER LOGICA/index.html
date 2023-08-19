@@ -12,35 +12,35 @@
 </head>
 
 <body>
-
-    <section class="d-flex align-items-center flex-column mx-4">
+    <!-- PUNTO 1  -->
+    <section class="container">
         <div class="pt-4">
             <span>Punto 1.</span>
-            <form class="d-flex flex-column pt-3 mx-4" id="formpunto1">
+            <form class="d-flex flex-column pt-3" id="formpunto1">
                 <span class="pt-2"> Inserte limite de números a sumar de 1 a X</span>
-                <input type="text" id="Numero1" class="numeropt1 pt-2 mt-3">
-                <button class="mt-3" type="submit" id="botonsuma">Click</button>
+                <input type="text" id="Numero1" class="numeropt1 pt-2 mt-3 w-25">
+                <button class="mt-3 w-25" type="submit" id="botonsuma">Click</button>
                 <p id="resultpt1"></p>
             </form>
         </div>
-
+        <!-- // PUNTO 2 -->
         <div class="pt-4">
             <span>Punto 2.</span>
             <form class="d-flex flex-column pt-3 mx-4" id="formpt2">
-                <span class="pt-2"> Inserte numero a validar </span>
-                <input type="text" id="Numeropt2" class="numeropt2 pt-2 mt-3">
-                <button class="mt-3" type="submit" id="botonsuma">Revisar </button>
+                <span class="pt-2"> Inserte numero a validar, si es par, o es impar.</span>
+                <input type="text" id="Numeropt2" class="numeropt2 pt-2 mt-3 w-25">
+                <button class="mt-3 w-25" type="submit" id="botonsuma">Revisar </button>
                 <p id="resultadonumero2"></p>
             </form>
         </div>
-
+        <!-- // PUNTO 3  -->
         <div class="pt-4">
             <span>Punto 3.</span>
             <form class="d-flex flex-column py-3 mx-4 " id="questpt3">
                 <span class="pt-2"> Ingresa tus datos para verificar si eres un premio 🤩 <br>
                     Debes cumplir las siguientes reglas:
                 </span>
-                <ul>   
+                <ul>
                     <li>Si eres menor de 10 años, obtienes un jugo 🧃!.</li>
                     <li>Si eres mayor de 18 años, obtienes una pola 🍺 !.</li>
                     <li>Y si eres Mujer, reclamas una porción de pizza Hawaiana 🍕 !.</li>
@@ -48,12 +48,36 @@
                     <li>SI no cumples con ninguno de estos, lástima, no recibes premios 🥲.</li>
                 </ul>
                 <div class="flex-row">
-                    <input type="text" id="edadpt3" class="numeropt2 pt-2 mt-3 mx-2" placeholder="Ingresa tu edad">
-                    <input type="text" id="genderpt3" class="numeropt2 pt-2 mt-3 mx-3" placeholder="Ingresa con el género identificado">
+                    <input type="number" id="edadpt3" class="w-25 pt-2 mt-3 mx-2" placeholder="Ingresa tu edad"
+                        required>
+                    <input type="text" id="genderpt3" class="w-25 pt-2 mt-3 mx-3"
+                        placeholder="Ingresa con el género identificado" required>
                 </div>
-                <button class="mt-3" type="submit" id="botonsuma">Verificar</button>
+                <button class="mt-3 w-50" type="submit" id="botonsuma">Verificar</button>
             </form>
         </div>
+
+
+        <!-- //PUNTO 4 -->
+
+
+        <div class="pt-4">
+            <span>Punto 1.</span>
+            <form class="d-flex flex-column pt-3 mx-4" id="formpunto1">
+                <span class="pt-1 w-25"> MENU COMIDAS RAPIDAS B1T</span>
+                <ul class="pt-3" id="Listacomer"></ul>
+                <P> Ingresa que deseas comer.</P>
+                <input type="text" id="Numero1" class="w-25 pt-2 mt-3">
+                <button class="mt-3 w-25" type="submit" id="botonsuma">Click</button>
+                <p id="resultpt1"></p>
+            </form>
+        </div>
+
+
+
+
+
+
 
 
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
