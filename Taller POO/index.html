@@ -19,6 +19,8 @@
       <button id="Btnpunto1">Pulsa para crear personas</button>
       <div id="personas1"></div>
     </div>
+
+    <!-- punto 2 -->
     <div class="mt-4 col">
       <h5>
         Punto2
@@ -29,36 +31,57 @@
       <div id="hijapt2car"></div>
 
     </div>
+
+
+    <!-- punto 3 -->
     <div class="mt-4 col">
       <h5>
         Punto3
       </h5>
-      <span>Ingrese si desea Depositar o Retirar, y el valor de esto, despues, oprima el boton para ver la
-        operacion.</span>
-      <div class="my-4 px-2 w-25">
-        <select id="punto3form" class="form-control selecpt3">
+      <span>
+        Ingrese si desea Ver el saldo actual, depositar, o retirar, después, oprima el boton para ver la operacion.
+      </span>
+      <form id="punto3">
+        <select id="punto3form" class="form-control selecpt3 my-4 px-2 w-25">
+          <option value="Versaldo">Ver saldo actual</option>
           <option value="depositar"> Depositar</option>
           <option value="retirar">retirar</option>
         </select>
-      </div>
-      <button id="padrept2">Accion</button>
+        <button type="submit">Accion</button>
+      </form>
+      <div id="divresultado"></div>
+    </div>
+
+    <!-- punto 4 -->
+
+    <div class="mt-4 col">
+      <h5>
+        Punto 4
+      </h5>
+      <form>
+        <input type="button" value="">
+        <button id="padrept2"></button>
+
+      </form>
+
+      <button id="hijapt2">Pulsa para crear el Coche </button>
       <div id="padrept2car"></div>
       <div id="hijapt2car"></div>
 
     </div>
-
   </section>
 
 
 
 
 
-
-
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
     crossorigin="anonymous"></script>
   <script src="gava.js"></script>
+
+
 </body>
 
 </html>

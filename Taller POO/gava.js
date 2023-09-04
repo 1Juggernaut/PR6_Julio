@@ -86,7 +86,6 @@ btnpadre.addEventListener("click", () => {
   </div>
   `
 
-  console.log(carpadre)
 })
 
 let btnhija = document.querySelector("#hijapt2")
@@ -106,5 +105,79 @@ btnhija.addEventListener("click", () => {
 
 //  PUNTO 3 :)))
 
+class CuentaBancaria {
+  constructor(saldo) {
+    this.saldo = saldo
+  }
+
+  depositar(valor1) {
+    this.saldo += valor1
+  }
+
+  retirar(valor) {
+    this.saldo -= valor
+  }
+
+}
+
+let Cuentabanco = new CuentaBancaria(3000)
+
+let formpunto3 = document.querySelector("#punto3")
+
+let divresultado3 = document.querySelector("#divresultado")
+
+formpunto3.addEventListener("submit", (evento) => {
+  evento.preventDefault()
+
+  let valorselek = evento.target.punto3form.value
+
+  switch (valorselek) {
+    case "depositar":
+      Cuentabanco.depositar(2500)
+      Swal.fire({
+        title: 'Deposito exitoso!',
+        html: `Te depositaron $2500 🤑🤑 <br><br> Nuevo saldo:$${Cuentabanco.saldo}`,
+        imageUrl: 'https://img.freepik.com/vector-premium/icono-linea-vectorial-acumulacion-efectivo-ahorros-banco-acumulan-depositos-banca-exitosa-futuro_92753-6411.jpg?w=2000',
+        imageWidth: 400,
+        imageHeight: 300,
+      })
+      break;
+    case "Versaldo":
+      Swal.fire({
+        text: `Tu saldo actual es $${Cuentabanco.saldo}`,
+        imageUrl: 'https://magosdalmatas.es/wp-content/uploads/2021/12/que-es-saldo-contable-se-puede-retirar.jpg',
+        imageWidth: 400,
+        imageHeight: 300,
+      })
+      break;
+    case "retirar":
+      let value = 2350
+      if (Cuentabanco.saldo < value) {
+        Swal.fire({
+          title: 'Saldo insuficiente',
+          text: 'No te alcanza para retirar.',
+          imageUrl: 'assets/img/sadpikachu/giphy.gif',
+          imageWidth: 400,
+          imageHeight: 300,
+        })
+      } else {
+
+        Cuentabanco.retirar(value)
+        Swal.fire({
+          text: `Retiro exitoso! 💵 `,
+          html: `Retiraste $2350 💵 <br><br> Nuevo saldo:$${Cuentabanco.saldo}`,
+          imageUrl: 'https://portafolio.co/files/article_content/uploads/2021/06/08/60bf020b4e8bc.jpeg',
+          imageWidth: 400,
+          imageHeight: 300,
+        })
+      }
+      break;
+
+    default:
+      break;
+  }
+})
+
+// PUNTO 4 -------------------------------------------------------------
 
 
