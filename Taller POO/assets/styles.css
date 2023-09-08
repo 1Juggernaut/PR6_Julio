@@ -1,3 +1,16 @@
 .selecpt3 {
     border-color: brown;
 }
+.divcirculo {
+    margin-right: 50%!important;   
+    border: 2px;
+    border-style: solid;
+    border-color: #34e40d!important;
+}
+
+.divrectn {
+    margin-right: 50%!important;   
+    border: 2px;
+    border-style: solid;
+    border-color: #e4b90d!important;
+}
