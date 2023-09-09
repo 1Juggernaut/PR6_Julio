@@ -1,3 +1,7 @@
 /node_modules
 
+<<<<<<< HEAD
 configvar.env
+=======
+/configvar.env
+>>>>>>> b72e3922c7f2b7de1fcb568b1df487bb0fe5832d
