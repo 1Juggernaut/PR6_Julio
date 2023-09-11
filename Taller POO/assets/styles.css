@@ -1,16 +1,45 @@
+body {
+    background-image: url(https://fondosmil.com/fondo/24333.jpg);
+    background-repeat: no-repeat;
+
+
+}
+
+
 .selecpt3 {
     border-color: brown;
 }
+
 .divcirculo {
-    margin-right: 50%!important;   
+    margin-right: 50% !important;
     border: 2px;
     border-style: solid;
-    border-color: #34e40d!important;
+    border-color: #34e40d !important;
 }
 
 .divrectn {
-    margin-right: 50%!important;   
+    margin-right: 50% !important;
     border: 2px;
     border-style: solid;
-    border-color: #e4b90d!important;
+    border-color: #e4b90d !important;
+}
+
+
+.btnredireccion {
+    text-decoration: none;
+    color: black;
+    background-color: antiquewhite;
+}
+
+.divtitulo {
+    margin-top: 150px;
+}
+
+.tecla-piano {
+    width: 90px;
+    height: 300px;
+    margin: 0 5px 0 5px;
+    background-color: #eae6e6e4;
+    border-radius: 9px !important;
+
 }
