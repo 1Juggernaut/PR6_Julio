@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+    --negroback-: rgb(0, 0, 0);
+    --doradorico-: rgb(214, 179, 25);
+}
+
+body {
+    background-color: var(--negroback-) !important;
+    color: var(--doradorico-) !important;
+}

@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4 offset-4">
+            <form class="mt-5">
+                <input type="number" [(ngModel)]="numeroTabla" class="form-control my-3"
+                    placeholder="Numero base a multiplicar">
+                <input type="number" [(ngModel)]="limiteTabla" class="form-control my-3"
+                    placeholder="Numero limite de multiplicacion">
+                <button type="submit" class="btn btn-dark w-75">Calcular</button>
+            </form>
+        </div>
+        <div class="col-4 offset-4 pt-5" #tablas></div>
+    </div>
+</div>

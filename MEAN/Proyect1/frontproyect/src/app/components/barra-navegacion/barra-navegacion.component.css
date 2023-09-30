@@ -1,0 +1,8 @@
+.Imglogo {
+    height: 50px;
+    width: auto;
+}
+
+* {
+    color: var(--doradorico-) !important;
+}

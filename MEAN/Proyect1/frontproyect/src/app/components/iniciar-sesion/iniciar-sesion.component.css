@@ -1,0 +1,50 @@
+* {
+    background-color: var(--negroback-);
+    /* color: var(--doradorico-) !important; */
+}
+
+.contenedorlogin {
+    height: 100vh;
+}
+
+.Titulologin {
+    margin-bottom: 20px;
+}
+
+.registrobtn {
+    cursor: pointer;
+    margin-left: 7px;
+}
+
+.cuadro {
+    width: 300px;
+    height: 300px;
+}
+
+.negro {
+    background-color: rgb(214, 40, 40);
+}
+
+.amarillo {
+    background-color: rgb(200, 255, 0);
+}
+
+/* .inputCorr {
+    color: #fff;
+} */
+
+.inputCorr::placeholder {
+    color: rgba(214, 179, 25, 0.61) !important;
+}
+
+.inputCorr:focus {
+    background-color: var(--negroback-) !important;
+}
+
+.Btningresar:disabled {
+    background-color: gray;
+}
+
+.Btningresar {
+    background-color: var(--doradorico-);
+}

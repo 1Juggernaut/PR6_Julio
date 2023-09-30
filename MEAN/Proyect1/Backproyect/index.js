@@ -1,11 +1,17 @@
 const express = require('express')  //llamada del servicio express
 const conectarDB = require('./config/db')
+const cors = require('cors')
 
 
 
 const app = express()  //   Implementacion del serivcio
+
+
+
 conectarDB()        //funcion de conexión a database
 
+
+app.use(cors())
 app.use(express.json())
 
 //rutas - endpoint

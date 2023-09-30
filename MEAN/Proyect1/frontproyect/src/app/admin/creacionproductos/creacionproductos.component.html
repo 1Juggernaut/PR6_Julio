@@ -1,0 +1,63 @@
+<section>
+    <div class="container mb-5">
+
+        <div class="row">
+            <div class="col-4 offset-4">
+                <form [formGroup]="Productoformulario" (ngSubmit)="agregarProducto()">
+                    <div class="mb-3">
+                        <label for="txtnproduct" class="form-label">Nombre de Producto</label>
+                        <input type="text" class="form-control" formControlName="nProduct" id="txtnproduct">
+                        <div class="text-light"
+                            *ngIf="Productoformulario.get('nProduct')?.hasError('required') && Productoformulario.get('nombre')?.touched">
+                            El nombre de producto es requerido</div>
+                        <div
+                            *ngIf="Productoformulario.get('nProduct')?.hasError('pattern') && Productoformulario.get('nombre')?.touched">
+                            El nombre de producto debe ser solo con letras</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="txtcategoria" class="form-label">categoria</label>
+                        <select id="txtcategoria" class="form-select" aria-label="Defalut select example"
+                            formControlName="categoria">
+                            <option selected value="">Selecciona una categoria...</option>
+                            <option value="Marco">Marco</option>
+                            <option value="Mesa">Mesa</option>
+                        </select>
+                        <label for="txtprecio" class="form-label">Precio</label>
+                        <input type="text" class="form-control" id="txtprecio" formControlName="precio">
+
+                        <label for="linkimagen" class="form-label">Url de imagen</label>
+                        <input type="text" class="form-control" id="linkimagen" formControlName="Urlimagen">
+
+
+                        <!-- <div
+                            *ngIf="Productoformulario.get('apellido')?.hasError('required') && Personitaformulario.get('apellido')?.touched">
+                            El apellido es requerido</div>
+                        <div
+                            *ngIf="Productoformulario.get('apellido')?.hasError('pattern') && Personitaformulario.get('apellido')?.touched">
+                            El apellido debe ser solo con letras</div> -->
+                    </div>
+                    <div class="my-4"> Dimensiones
+                        <div class="mb-3 my-3 d-flex justify-content-evenly">
+                            <label for="txtalto" class="form-label">Alto</label>
+                            <input type="text" class="form-control" formControlName="alto" id="txtalto">
+                            <label for="txtancho" class="form-label">Ancho</label>
+                            <input type="text" class="form-control" formControlName="ancho" id="txtancho">
+                            <div
+                                *ngIf="Productoformulario.get('alto')?.hasError('required') && Productoformulario.get('alto')?.touched">
+                                La medida Alto es requerida
+                            </div>
+                            <div
+                                *ngIf="Productoformulario.get('alto')?.hasError('pattern') && Productoformulario.get('alto')?.touched">
+                                Las medidas solo reciben numeros, en formato de Metros
+                            </div>
+                            <div
+                                *ngIf="Productoformulario.get('ancho')?.hasError('min') && Productoformulario.get('ancho')?.touched">
+                                La cedula debe tener al menos 10 digitos
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit">Crear personita</button>
+                </form>
+            </div>
+        </div>

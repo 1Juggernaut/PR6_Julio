@@ -1,0 +1,73 @@
+* {
+    background-color: var(--negroback-);
+    color: var(--doradorico-);
+}
+
+input::placeholder {
+    color: rgba(190, 158, 17, 0.468);
+}
+
+.inputform {
+    background-color: var(--negroback-) !important;
+    color: var(--doradorico-);
+}
+
+.Divform {
+    width: 80vh;
+}
+
+.botonRegistro {
+    font-size: 15px;
+    background: transparent;
+    border: none;
+    border-radius: 7px 7px 0px 0px;
+    padding: 0.5em 1em;
+    color: #ffedd3;
+    text-transform: uppercase;
+    position: relative;
+    transition: .5s ease;
+}
+
+.botonRegistro::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: #ffc506;
+    transition: .5s ease;
+
+}
+
+.botonRegistro:hover {
+    color: var(--negroback-);
+    transition-delay: .5s;
+    background-color: var(--doradorico-);
+}
+
+.botonRegistro:hover::before {
+    width: 100%;
+}
+
+.botonRegistro::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0;
+    width: 100%;
+    background-color: #ffc506;
+    transition: .4s ease;
+    z-index: -1;
+    border-radius: 7px 7px 0px 0px;
+
+}
+
+.botonRegistro:hover::after {
+    height: 100%;
+    transition-delay: 0.4s;
+    color: rgb(3, 3, 3);
+    border-radius: 7px 7px 0px 0px;
+
+}
