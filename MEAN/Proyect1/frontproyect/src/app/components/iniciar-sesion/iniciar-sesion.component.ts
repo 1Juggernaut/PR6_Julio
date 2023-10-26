@@ -1,7 +1,9 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Personajes } from "src/app/models/personitas";
+import { Router } from "@angular/router";
+import Swal from 'sweetalert2'
+
 import { PersonajesService } from "src/app/services/personajes.service";
+
 
 @Component({
     selector: 'app-iniciar-sesion',
@@ -9,57 +11,42 @@ import { PersonajesService } from "src/app/services/personajes.service";
     styleUrls: ['./iniciar-sesion.component.css']
 })
 export class IniciarSesionComponent {
-    @ViewChild('miElemento') miCuadro!: ElementRef
+    @ViewChild('Btnsubmit') botonsubmit!: ElementRef
 
 
-    formularioRegistro: FormGroup
-    regexAlfabetico = /^[A-Za-z ]+$/
-    regexSoloNumeros = /^[0-9]+$/
-
-    constructor(private fb: FormBuilder, private _personitaservice: PersonajesService) {
 
 
-        this.formularioRegistro = this.fb.group({
-            nombre: ['', [Validators.required, Validators.pattern(this.regexAlfabetico)]],
-            apellido: ['', [Validators.required, Validators.pattern(this.regexAlfabetico)]],
-            cedula: ['', [Validators.required, Validators.pattern(this.regexSoloNumeros), Validators.minLength(10), Validators.maxLength(10)]]
-            // urlimagen : ['assets/img/imgDefecto.png'] 
-        })
+    Userformlogin = {
+        direccion_correo: '',
+        password: ''
     }
 
-    CambiarColor() {
-        console.log("Ola ke ase");
-        this.miCuadro.nativeElement.classList.add('amarillo')
-        this.miCuadro.nativeElement.classList.remove('negro')
-    }
+    constructor(private _usuarioService: PersonajesService, private router: Router) { }
 
-    Enviarformulario() {
+    ingresarUsuario() {
+        this._usuarioService.postIngresoCuenta(this.Userformlogin).subscribe(respuestaApi => {
+            let tokenApi = respuestaApi.token
+            // creacion de un token en el sessionstorage para rectificar si esta logueado el usuario
+            sessionStorage.setItem('token', tokenApi)
 
-        //manera en la que se toma todos los valores el formulario sin validar los tipos de datos
-        // let manera1 = console.log(this.formularioRegistro.value);
+            this._usuarioService.postdesencriptarToken(tokenApi).subscribe((respuestaApi2: any) => {
+                sessionStorage.setItem('infoUsuario', JSON.stringify(respuestaApi2.decodedPayload))
+                console.log(respuestaApi2);
 
+                Swal.fire({
+                    title: `Hola ${respuestaApi2.nombre}`,
+                    html: '¡Bienvenido a Cristales Rico!',
+                    timer: 1500
+                })
+            })
+            this.router.navigate(['/'])
 
-        // manera2
-        // ? manera en la que armamos el Json que requiere la API para usar sus endpoints (Normalmnete s ehace de esta manera cuando el formulario tiene campos que no necesitamos enviar a la API) 
-
-        // const personajeFormulario: Personajes = {
-        //     nombre: this.formularioRegistro.get('nombre')?.value,
-        //     apellido: this.formularioRegistro.get('edad')?.value,
-        //     cedula: this.formularioRegistro.get('cedula')?.value
-        // }
-
-
-        //  Manera en la cual tomamos todos los campos del formulario y validamos la estrucutra con el modelo creado
-        let formularioData: Personajes = this.formularioRegistro.value
-
-        this._personitaservice.postPersonita(formularioData).subscribe(data => {
-            alert('personaje creado')
-            console.log(data)
-        }, Error => {
-            console.log(Error);
-
+        }, err => {
+            Swal.fire({
+                icon: 'error',
+                title: 'Usuario y/o contraseña incorrectos.',
+            })
         })
-
 
     }
 }

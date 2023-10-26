@@ -16,6 +16,9 @@ import { ProductosComponent } from './components/productos/productos.component';
 import { CreacionproductosComponent } from './admin/creacionproductos/creacionproductos.component';
 import { MisLikesComponent } from './ejemplos/mis.likes/mis.likes.component';
 import { TablamultiplicarComponent } from './ejemplos/tablamultiplicar/tablamultiplicar.component';
+import { ListaUsuariosComponent } from './admin/lista-usuarios/lista-usuarios.component';
+import { Error404Component } from './components/error404/error404.component';
+import { ControlProductosComponent } from './admin/control-productos/control-productos.component';
 
 @NgModule({
     declarations: [
@@ -29,6 +32,10 @@ import { TablamultiplicarComponent } from './ejemplos/tablamultiplicar/tablamult
         CreacionproductosComponent,
         MisLikesComponent,
         TablamultiplicarComponent,
+        ListaUsuariosComponent,
+        Error404Component,
+        CreacionproductosComponent,
+        ControlProductosComponent
     ],
     imports: [
         BrowserModule,

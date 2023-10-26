@@ -25,7 +25,7 @@ input::placeholder {
     color: #ffedd3;
     text-transform: uppercase;
     position: relative;
-    transition: .5s ease;
+    transition: .3s ease;
 }
 
 .botonRegistro::before {
@@ -36,14 +36,18 @@ input::placeholder {
     height: 2px;
     width: 0;
     background-color: #ffc506;
-    transition: .5s ease;
+    transition: .3s ease;
 
 }
 
 .botonRegistro:hover {
     color: var(--negroback-);
-    transition-delay: .5s;
+    transition-delay: .3s;
     background-color: var(--doradorico-);
+}
+
+.botonRegistro:disabled {
+    background-color: rgba(65, 65, 65, 0.66);
 }
 
 .botonRegistro:hover::before {
@@ -58,7 +62,7 @@ input::placeholder {
     height: 0;
     width: 100%;
     background-color: #ffc506;
-    transition: .4s ease;
+    transition: .3s ease;
     z-index: -1;
     border-radius: 7px 7px 0px 0px;
 
@@ -70,4 +74,8 @@ input::placeholder {
     color: rgb(3, 3, 3);
     border-radius: 7px 7px 0px 0px;
 
+}
+
+.Optpass {
+    font-weight: bold;
 }

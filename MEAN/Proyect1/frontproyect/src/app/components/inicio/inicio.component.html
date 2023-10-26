@@ -1,53 +1,10 @@
-<!-- <h2 class=" d-flex justify-content-center">El inicio de todo un mundo por explorar.</h2>
+<h2 class=" d-flex justify-content-center">El inicio de todo un mundo por explorar.</h2>
 <section class="container d-grid justify-content-center align-items-center">
     <img src="assets/img/bob.gif" alt="">
     <h2 class=" d-flex justify-content-center">IMAGINACION</h2>
-</section> -->
+</section>
 <section class="my-5">
 
-    <div class="row">
-        <div class="col-4 offset-4">
-            <form [formGroup]="Personitaformulario" (ngSubmit)="agregarPersonita()">
-                <div class="mb-3">
-                    <label for="txtnombre" class="form-label">nombre</label>
-                    <input type="text" class="form-control" formControlName="nombre" id="txtnombre">
-                    <div class="text-light"
-                        *ngIf="Personitaformulario.get('nombre')?.hasError('required') && Personitaformulario.get('nombre')?.touched">
-                        El nombre es requerido</div>
-                    <div
-                        *ngIf="Personitaformulario.get('nombre')?.hasError('pattern') && Personitaformulario.get('nombre')?.touched">
-                        El nombre debe ser solo con letras</div>
-                </div>
-                <div class="mb-3">
-                    <label for="txtapellido" class="form-label">apellido</label>
-                    <input type="text" class="form-control" id="txtapellido" formControlName="apellido">
-                    <div
-                        *ngIf="Personitaformulario.get('apellido')?.hasError('required') && Personitaformulario.get('apellido')?.touched">
-                        El apellido es requerido</div>
-                    <div
-                        *ngIf="Personitaformulario.get('apellido')?.hasError('pattern') && Personitaformulario.get('apellido')?.touched">
-                        El apellido debe ser solo con letras</div>
-                </div>
-                <div class="mb-3">
-                    <label for="txtcedula" class="form-label">cedula</label>
-                    <input type="text" class="form-control" formControlName="cedula" id="txtcedula">
-                    <div
-                        *ngIf="Personitaformulario.get('cedula')?.hasError('required') && Personitaformulario.get('cedula')?.touched">
-                        La cedula es requerida
-                    </div>
-                    <div
-                        *ngIf="Personitaformulario.get('cedula')?.hasError('pattern') && Personitaformulario.get('cedula')?.touched">
-                        La cedula solo recibe numeros
-                    </div>
-                    <div
-                        *ngIf="Personitaformulario.get('cedula')?.hasError('minlength') && Personitaformulario.get('cedula')?.touched">
-                        La cedula debe tener al menos 10 digitos
-                    </div>
-                </div>
-                <button type="submit">Crear personita</button>
-            </form>
-        </div>
-    </div>
     <section class="col">
         <button class=" btn btn-light col-4" routerLink="/productos">PRODUCTOS</button>
         <button class="btn btn-danger col-4">Click</button>
@@ -55,18 +12,3 @@
 
     </section>
 </section>
-<div class="row row-cols-1 row-cols-md-2 g-4">
-    <div class="col" *ngFor="let personita of listaPersonajes">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">{{personita.nombre}}</h5>
-                <h3 class="">{{personita.apellido}}</h3>
-                <h2 class="">{{personita.cedula}}</h2>
-            </div>
-            <div>
-                <button class="btn btn-danger">Editar</button>
-                <button class="btn btn-warning">Eliminar</button>
-            </div>
-        </div>
-    </div>
-</div>

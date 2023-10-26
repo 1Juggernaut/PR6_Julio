@@ -10,7 +10,7 @@ exports.creacionproducto = async (req, res) => {
         if (busquedaproducto != null) {
             console.log('ERROR - DATOS EXISTENTES EN DB.')
             console.log(busquedaproducto)
-            res.status(503).send('Los datos ingresados ya estan creados, se creativo :).')
+            res.status(503).json('Los datos ingresados ya estan creados, se creativo :).')
             return
         }
         let Productomodel = new Productos(req.body)
@@ -20,7 +20,7 @@ exports.creacionproducto = async (req, res) => {
         console.log(Productomodel)
     } catch (error) {
         console.log(error)
-        res.status(502).send('Ups... Ocurrió un error, avisa al Admin.')
+        res.status(502).json('Ups... Ocurrió un error, avisa al Admin.')
     }
 }
 
@@ -32,7 +32,7 @@ exports.mostrarProductos = async (req, res) => {
         res.json(Productosdata)
     } catch (error) {
         console.log(error)
-        res.status(502).send('Ups... Ocurrió un error, avisa al Admin.')
+        res.status(502).json('Ups... Ocurrió un error, avisa al Admin.')
     }
 }
 
@@ -45,17 +45,17 @@ exports.mostarunsoloproducto = async (req, res) => {
             const productodata = await Productos.findById(req.params.id)
             console.log(productodata)
             if (!productodata) {
-                res.status(404).send('Personaje no encontrado')
+                res.status(404).json('Personaje no encontrado')
             } else {
                 res.json(productodata)
             }
         } else {
             // status(418) es una respiuesta comica del error 400 "No puedo preparar cafe porque soy una tetera" "I´m a teapot"
-            res.status(400).send('El id proporcionado no existe o no es correcto')
+            res.status(400).json('El id proporcionado no existe o no es correcto')
         }
     } catch (error) {
         console.log(error)
-        res.status(502).send('Ups... ocurrió algo en el proceso, comuníquese con el administrador.')
+        res.status(502).json('Ups... ocurrió algo en el proceso, comuníquese con el administrador.')
     }
 }
 
@@ -72,10 +72,10 @@ exports.Busquedapornombreproduct = async (req, res) => {
         }
         // } else {
         //     // status(418) es una respiuesta comica del error 400 "No puedo preparar cafe porque soy una tetera" "I´m a teapot"
-        //     res.status(400).send('El id proporcionado no existe o no es correcto')
+        //     res.status(400).json('El id proporcionado no existe o no es correcto')
     } catch (error) {
         console.log(error)
-        res.status(502).send('Ups... ocurrió algo en el proceso, comuníquese con el administrador.')
+        res.status(502).json('Ups... ocurrió algo en el proceso, comuníquese con el administrador.')
     }
 }
 
@@ -86,7 +86,7 @@ exports.borrarproducto = async (req, res) => {
         if (regexIdmongo.test(req.params.id)) {
             const productodata = await Productos
             if (!productodata) {
-                res.status(404).send('El Id proporcionado no se encuentra')
+                res.status(404).json('El Id proporcionado no se encuentra')
             } else {
                 await Productos.findOneAndRemove({ _id: req.params.id })
                 // se puede hacer con varios identificadores, no solo con el id o su valor
@@ -94,11 +94,11 @@ exports.borrarproducto = async (req, res) => {
                 console.log('Exitoso :)')
             }
         } else {
-            res.status(400).send('El id proporcionado no existe o no es correcto')
+            res.status(400).json('El id proporcionado no existe o no es correcto')
         }
     } catch (error) {
         console.log(error)
-        res.status(502).send('Ups... ocurrió algo en el proceso, comuníquese con el administrador.')
+        res.status(502).json('Ups... ocurrió algo en el proceso, comuníquese con el administrador.')
     }
 }
 
@@ -119,7 +119,7 @@ exports.actualizarproducto = async (req, res) => {
         if (regexIdmongo.test(req.params.id)) {
             const productodata = await Productos.FindById(req.params.id)
             if (!productodata) {
-                res.status(404).send('Producto no encontrado')
+                res.status(404).json('Producto no encontrado')
             } else {
                 const { nProduct, Urlimagen, categoria, alto, ancho, precio } = req.body
                 productodata.nProduct = nProduct
@@ -132,10 +132,10 @@ exports.actualizarproducto = async (req, res) => {
                 res.json(documentoActualizado)
             }
         } else {
-            res.status(400).send('El id proporcionado no existe o no es correcto')
+            res.status(400).json('El id proporcionado no existe o no es correcto')
         }
     } catch (error) {
         console.log(error)
-        res.status(502).send('Ups... ocurrió algo en el proceso, comuníquese con el administrador.')
+        res.status(502).json('Ups... ocurrió algo en el proceso, comuníquese con el administrador.')
     }
 }

@@ -1,0 +1,106 @@
+<div class="d-flex justify-content-center align-items-center">
+    <h2 class="py-4">Seccion de administrador-- Control de Usuarios.</h2>
+</div>
+<div class="d-flex justify-content-end mx-3 my-3">
+    <button class="btn btn-light" routerLink="/registro">Crear Usuario</button>
+</div>
+
+<section class="container">
+    <div class="table-responsive">
+        <table class="table pt-2">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Direccion de correo Electronico</th>
+                    <th scope="col">Usuario</th>
+                    <th scope="col">Numero de telefono</th>
+                    <th scope="col">Codigo de pais</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="align-middle" *ngFor="let Datausuario of listaPersonajes">
+                    <td>{{Datausuario.nombre}}</td>
+                    <td>{{Datausuario.apellido}}</td>
+                    <td>{{Datausuario.direccion_correo}}</td>
+                    <td>{{Datausuario.usuario}}</td>
+                    <td>
+                        <div class="d-flex justify-content-center">
+                            {{Datausuario.pais_tel}}
+                        </div>
+                    </td>
+                    <td>{{Datausuario.numero_tel}}</td>
+                    <td>
+                        <div class="d-flex ">
+                            <button class="btn btn-warning mx-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Editar
+                            </button>
+                            <button [routerLink]="['/registro']" class="btn btn-warning mx-1">
+                                EditMiguel
+                            </button>
+                            <button class="btn btn-danger mx-1"
+                                (click)="Borrarusuario(Datausuario._id)">Eliminar</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</section>
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form [formGroup]="Usuarioformulario" (ngSubmit)="agregarnuevoUsuario()">
+
+                <div>Nombre</div>
+                <div class="input-group mb-3 ">
+                    <input type="text" class="form-control inputform" placeholder="Nombre" formControlName="nombre">
+                </div>
+                <div>Apellido</div>
+                <div class="input-group mb-3 ">
+                    <input type="text" class="form-control inputform" placeholder="Apellido" formControlName="apellido">
+                </div>
+
+                <div class="mb-3">
+                    <label for="basic-url" class="form-label">Direccion de correo electronico</label>
+                    <div class="input-group">
+                        <input type="email" class="form-control inputform" placeholder="example@example.com"
+                            formControlName="direccion_correo">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="basic-url" class="form-label">Usuario</label>
+                    <div class="input-group">
+                        <input type="email" class="form-control inputform" placeholder="Usuario"
+                            formControlName="usuario">
+                    </div>
+                </div>
+
+
+
+                <div>Contraseña</div>
+                <div class="input-group mb-3 inputform">
+                    <input type="password" class="form-control" placeholder="Contraseña" formControlName="contraseña">
+                </div>
+
+                <div>Numero de teléfono</div>
+                <div class="input-group mb-3 inputform">
+                    <input type="tel" class="form-control" placeholder="Numero de telefono"
+                        formControlName="numero_tel">
+                </div>
+
+                <button class=" btn-light my-4 botonRegistro" type="submit">Crear cuenta</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -43,16 +43,19 @@ export class ProductosComponent implements OnInit {
             iconColor: '#db9a18'
         }).then((result) => {
             this._productosservice.deleteProducto(id_product).subscribe(resAPi => {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Producto eliminado.',
-                    iconColor: '#2ce30b'
-                })
-                this.obtenerPoductos()
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Producto eliminado.',
+                        iconColor: '#2ce30b'
+                    })
+                    this.obtenerPoductos()
+                }
             }, error => {
                 console.log(error);
             })
         })
     }
+
 
 }

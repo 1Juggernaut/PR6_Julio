@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-center align-items-center">
+<div class="d-flex justify-content-center align-items-center mt-5">
     <h2 class="fw-bold">Creacion de cuenta</h2>
 </div>
 <div class=" row col col-4 offset-4 mb-3 mt-5 text-center">
@@ -10,34 +10,108 @@
 <section class="d-flex justify-content-center align-items-center Cprincipal">
     <div class="mx-5 my-5 px-4 py-4 ">
         <div class="border-light border border-3 px-4 py-4 Divform">
-            <form class="">
-                <div>Nombre</div>
-                <div class="input-group mb-3 ">
-                    <input type="text" class="form-control inputform" placeholder="Nombre" name="Nombre">
-                </div>
-                <div>Apellido</div>
-                <div class="input-group mb-3 ">
-                    <input type="text" class="form-control inputform" placeholder="Apellido" name="Apellido">
-                </div>
+            <form [formGroup]="Usuarioformulario" (ngSubmit)="agregarnuevoUsuario()">
 
                 <div class="mb-3">
-                    <label for="basic-url" class="form-label">Direccion de correo electronico</label>
-                    <div class="input-group">
-                        <input type="email" class="form-control inputform" placeholder="example@example.com" name="">
+                    <label for="txtnombre" class="form-label">Nombre</label>
+                    <input type="text" id="txtnombre" class="form-control inputform" placeholder="Nombre"
+                        formControlName="nombre">
+                    <div *ngIf="Usuarioformulario.get('nombre')?.hasError('required') && Usuarioformulario.get('nombre')?.touched"
+                        class="fw-bold text-danger my-2">
+                        El campo nombre es requerido.
+                    </div>
+                    <div *ngIf="Usuarioformulario.get('nombre')?.hasError('pattern') && Usuarioformulario.get('nombre')?.touched"
+                        class="fw-bold text-danger my-2">El campo
+                        nombre es invalido.</div>
+                </div>
+
+                <div class=" mb-3 ">
+                    <label for="txtapellido" class="form-label">Apellido</label>
+                    <input type="text" id="txtapellido" class="form-control inputform" placeholder="Apellido"
+                        formControlName="apellido">
+
+                    <div *ngIf="Usuarioformulario.get('apellido')?.hasError('required') && Usuarioformulario.get('apellido')?.touched"
+                        class="fw-bold text-danger my-2">
+                        El campo apellido es requerido.
+                    </div>
+                    <div *ngIf="Usuarioformulario.get('apellido')?.hasError('pattern') && Usuarioformulario.get('apellido')?.touched "
+                        class="fw-bold text-danger my-2">
+                        El campo apellido es invalido.
                     </div>
                 </div>
 
-                <div>Contraseña</div>
-                <div class="input-group mb-3 inputform">
-                    <input type="password" class="form-control" placeholder="Contraseña">
+                <div class="mb-3">
+                    <label for="txtcorreo" class="form-label">Direccion de correo electronico</label>
+                    <input type="email" id="txtcorreo" class="form-control inputform" placeholder="example@example.com"
+                        formControlName="direccion_correo">
+                    <div *ngIf="Usuarioformulario.get('direccion_correo')?.hasError('required')  && Usuarioformulario.get('direccion_correo')?.touched"
+                        class="fw-bold text-danger my-2">
+                        El campo de Direccion de correo es requerido.
+                    </div>
+                    <div *ngIf="Usuarioformulario.get('direccion_correo')?.hasError('pattern')  && Usuarioformulario.get('direccion_correo')?.touched"
+                        class="fw-bold text-danger my-2">
+                        El campo es invalido,recuerda manejar una
+                        direccion valida.(Example@example.com)
+                    </div>
                 </div>
 
-                <div>Numero de teléfono</div>
-                <div class="input-group mb-3 inputform">
-                    <input type="tel" class="form-control" placeholder="Numero de telefono">
+                <div class="mb-3">
+                    <label id="txtusuario" class="form-label">Usuario</label>
+                    <input type="email" id="txtusuario" class="form-control inputform" placeholder="Usuario"
+                        formControlName="usuario">
+                    <div *ngIf="Usuarioformulario.get('usuario')?.hasError('required') && Usuarioformulario.get('usuario')?.touched"
+                        class="fw-bold text-danger my-2">
+                        El campo Usuario es requerido.
+                    </div>
+                    <div *ngIf="Usuarioformulario.get('usuario')?.hasError('pattern') && Usuarioformulario.get('usuario')?.touched"
+                        class="fw-bold text-danger my-2">
+                        El campo Usuario es invalido, no puedes ingresar caracteres especiales.
+                    </div>
                 </div>
 
-                <button class=" btn-light my-4 botonRegistro" type="submit">Crear cuenta</button>
+                <div class=" mb-3">
+                    <label for="txtpass">Contraseña</label>
+                    <input type="password" id="txtpass" class="form-control inputform" placeholder="Contraseña"
+                        formControlName="password">
+                    <div *ngIf="Usuarioformulario.get('password')?.hasError('required') && Usuarioformulario.get('password')?.touched"
+                        class="fw-bold text-danger my-2">
+                        El campo Contraseña es requerido.
+                    </div>
+                    <div *ngIf="Usuarioformulario.get('password')?.hasError('pattern') && Usuarioformulario.get('password')?.touched"
+                        class="fw-bold text-danger my-2">
+                        El campo Contraseña es invalido, recuerda manejar.
+                        <ul>
+                            <li class="Optpass text-danger">Al menos una letra mayuscula y una minusculas.</li>
+                            <li class="Optpass text-danger">Al menos 8 caracteres de longitud.</li>
+                            <li class="Optpass text-danger">Al menos un digito.</li>
+                            <li class="Optpass text-danger">No debe contener espacios en blanco.</li>
+                        </ul>
+                    </div>
+
+
+                </div>
+
+                <div class="3 inputform">
+                    <div class="my-2">
+                        <label for="txtpaisnum" class="form-label">Codigo internacional de Pais</label>
+                        <select formControlName="pais_tel" class="form-select inputform" id="txtpaisnum">
+                            <option selected value="">Selecciona un codigo de pais...</option>
+                            <option value="57">Colombia (+57)</option>
+                            <option value="58">Venezuela (+58)</option>
+                            <option value="55">Brasil (+55)</option>
+                            <option value="593">Ecuador (+593)</option>
+                            <option value="507">Panamá (+507)</option>
+                            <option value="51">Peru (+51)</option>
+                        </select>
+                    </div>
+                    <label for="txtnum" class="form-label">Numero de telefono</label>
+                    <input type="tel" class="form-control inputform" id="txtnum" placeholder="Numero de telefono"
+                        formControlName="numero_tel">
+                </div>
+
+
+                <button class=" btn-light my-4 botonRegistro" [disabled]="Usuarioformulario.invalid" type="submit">Crear
+                    cuenta</button>
             </form>
         </div>
     </div>
